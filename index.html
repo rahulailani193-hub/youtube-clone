@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>YouTube Clone</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <header class="topbar">
+    <button class="icon-btn hamburger" id="sidebarToggle" aria-label="Toggle sidebar">☰</button>
+    <a class="brand" href="#" aria-label="YouTube home"><span class="yt-mark">▶</span><span class="brand-name">YouTube</span><sup>IN</sup></a>
+    <div class="search-area">
+      <form id="searchForm" class="search-box"><input id="searchInput" type="search" placeholder="Search" aria-label="Search videos" /><button type="submit" aria-label="Search">⌕</button></form>
+      <button class="icon-btn mic" aria-label="Voice search">🎙</button>
+    </div>
+    <div class="top-actions"><button class="create-btn">＋ <span>Create</span></button><button class="icon-btn" aria-label="Notifications">♧</button><button class="avatar">R</button></div>
+  </header>
+
+
+  <aside class="sidebar" id="sidebar">
+    <nav>
+      <a class="nav-item active" data-nav="Home"><span>⌂</span>Home</a>
+      <a class="nav-item" data-nav="Shorts"><span>▣</span>Shorts</a>
+      <a class="nav-item" data-nav="Subscriptions"><span>▻</span>Subscriptions</a>
+      <div class="nav-divider"></div><h4>You <span>›</span></h4>
+      <a class="nav-item" data-nav="Your channel"><span>▧</span>Your channel</a>
+      <a class="nav-item" data-nav="History"><span>◴</span>History</a>
+      <a class="nav-item" data-nav="Playlists"><span>☷</span>Playlists</a>
+      <a class="nav-item" data-nav="Watch later"><span>◷</span>Watch later</a>
+      <a class="nav-item" data-nav="Liked videos"><span>♡</span>Liked videos</a>
+      <a class="nav-item" data-nav="Your videos"><span>▻</span>Your videos</a>
+      <a class="nav-item" data-nav="Downloads"><span>⇩</span>Downloads</a>
+      <div class="nav-divider"></div><h4>Explore</h4>
+      <a class="nav-item" data-category="Gaming"><span>🎮</span>Gaming</a>
+      <a class="nav-item" data-category="Sports"><span>⚽</span>Sports</a>
+      <a class="nav-item" data-category="Learning"><span>▣</span>Learning</a>
+    </nav>
+  </aside>
+
+  <main class="main-content" id="mainContent">
+    <div class="category-strip" id="categoryStrip"></div>
+    <section class="video-grid" id="videoGrid" aria-label="Video recommendations"></section>
+    <div class="load-status" id="loadStatus">Loading videos…</div>
+  </main>
+
+  <div class="player-overlay hidden" id="playerOverlay" role="dialog" aria-modal="true" aria-label="Video player">
+    <div class="player-panel"><button class="close-player" id="closePlayer" aria-label="Close player">✕</button><video id="mainPlayer" controls autoplay playsinline></video><div class="player-info"><h2 id="playerTitle"></h2><p id="playerMeta"></p></div></div>
+  </div>
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
